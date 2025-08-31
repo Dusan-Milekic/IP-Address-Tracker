@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  min-width: 327px;
+  min-height: 300px;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  padding-top: 45px;
+
+  background: url("../street.svg"),
+    linear-gradient(79deg, rgba(68, 61, 151, 1) 0%, rgba(95, 134, 242, 1) 100%);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+header h1 {
+  font-size: 26px;
+}
+
+.search-holder {
+  margin: 25px 20px;
+}
+.holder {
+  display: flex;
+  justify-content: center;
+
+  min-width: 327px;
+}
+input {
+  font-size: 18px;
+  width: 100%;
+  padding: 18px;
+  border: 0;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  text-indent: 10px;
+  outline: 0px;
+  font-weight: 400;
+}
+
+button {
+  padding: 20px 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: black;
+  color: white;
+}
+
+.holderInfo {
+  outline: 2px dotted red;
+  margin-top: 24px;
+  width: 327px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 32px 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 15px;
+
+  position: absolute;
+}
+.holderInfo h2 {
+  margin-bottom: 24px;
+  font-size: 20px;
+}
+.holderInfo p {
+  font-size: 10px;
+  margin: 0px;
+}
