@@ -31,6 +31,7 @@ header {
 header h1 {
   font-size: 26px;
   margin-bottom: 0px;
+  padding-top: 24px;
 }
 
 .search-holder {
@@ -63,11 +64,12 @@ button {
   border-bottom-right-radius: 15px;
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 
 .holderInfo {
   margin-top: 24px;
-  width: 327px;
+  width: 279px;
   text-align: center;
   background-color: white;
   color: black;
@@ -77,6 +79,7 @@ button {
   border-radius: 15px;
 
   position: absolute;
+  z-index: 5;
 }
 .holderInfo h2 {
   margin-bottom: 24px;
@@ -88,4 +91,14 @@ button {
 }
 .holderInfo h2:last-child {
   margin-bottom: 0px;
+}
+main {
+  position: relative;
+  height: 70vh;
+}
+
+#map {
+  position: relative;
+  height: 100%;
+  z-index: 0;
 }
