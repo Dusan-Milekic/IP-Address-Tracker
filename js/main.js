@@ -7,7 +7,7 @@ async function FetchApi(ipAddress) {
 
   return await json;
 }
-
+var map = L.map("map");
 async function ShowData(ipAddress) {
   const json = await FetchApi(ipAddress);
 
@@ -17,7 +17,8 @@ async function ShowData(ipAddress) {
   h2[2].innerText = "UTC " + json.location.timezone;
   h2[3].innerText = json.isp;
 
-  var map = L.map("map").setView([json.location.lat, json.location.lng], 14);
+  map.setView([json.location.lat, json.location.lng], 14);
+
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
@@ -31,9 +32,11 @@ async function ShowData(ipAddress) {
     iconAnchor: [22, 60], // point of the icon which will correspond to marker's location
     popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
   });
+
   L.marker([json.location.lat, json.location.lng], { icon: darkIcon }).addTo(
     map
   );
+  map.update();
 }
 
 const button = document.getElementsByTagName("button")[0];
