@@ -13,11 +13,11 @@ async function ShowData(ipAddress) {
 
   const h2 = document.getElementsByTagName("h2");
   h2[0].innerText = json.ip;
-  h2[1].innerText = json.location.region + ", " + json.location.postalCode;
+  h2[1].innerText = json.location.region + ", " + json.location.city;
   h2[2].innerText = "UTC " + json.location.timezone;
   h2[3].innerText = json.isp;
 
-  map.setView([json.location.lat, json.location.lng], 14);
+  map.setView([json.location.lat, json.location.lng], 17);
 
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
@@ -36,14 +36,16 @@ async function ShowData(ipAddress) {
   L.marker([json.location.lat, json.location.lng], { icon: darkIcon }).addTo(
     map
   );
+
   map.update();
 }
-
+ShowData("192.212.174.101");
 const button = document.getElementsByTagName("button")[0];
 const input = document.getElementById("ipSearch");
 button.addEventListener("click", async () => {
   await ShowData(input.value);
 });
+
 /*
 location.city
 City

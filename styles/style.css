@@ -54,7 +54,9 @@ input {
   outline: 0px;
   font-weight: 400;
 }
-
+input:focus {
+  background-color: white;
+}
 button {
   padding: 20px 0px;
   padding-left: 24px;
@@ -77,21 +79,37 @@ button {
   padding-left: 24px;
   padding-right: 24px;
   border-radius: 15px;
-
   position: absolute;
   z-index: 5;
 }
 .holderInfo h2 {
-  margin-bottom: 24px;
   font-size: 20px;
+  font-weight: 600;
+  color: #2c2c2c;
+  letter-spacing: -0.25px;
 }
 .holderInfo p {
   font-size: 10px;
   margin: 0px;
+  color: #707070;
+  font-weight: bold;
+  letter-spacing: 1.75px;
 }
 .holderInfo h2:last-child {
   margin-bottom: 0px;
 }
+.info {
+  margin-bottom: 24px;
+}
+
+#two,
+#forth {
+  display: block;
+}
+.line {
+  display: none;
+}
+
 main {
   position: relative;
   height: 70vh;
@@ -101,4 +119,34 @@ main {
   position: relative;
   height: 100%;
   z-index: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .holderInfo {
+    min-width: 555px;
+    display: grid;
+    grid-template-columns: repeat(2, 213px);
+    padding: 32px;
+    text-align: left;
+
+    gap: 32px;
+  }
+  .info {
+    margin-bottom: 0px;
+  }
+  .holderInfo p {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  #two,
+  #forth {
+    display: flex;
+  }
+  .line {
+    height: 100%;
+    position: relative;
+    background-color: #707070;
+    opacity: 0.2;
+    right: 32px;
+  }
 }
