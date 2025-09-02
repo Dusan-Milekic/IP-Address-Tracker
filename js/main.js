@@ -10,7 +10,7 @@ async function FetchApi(ipAddress) {
 var map = L.map("map");
 async function ShowData(ipAddress) {
   const json = await FetchApi(ipAddress);
-
+  if (json.isp == "") json.isp = "not have";
   const h2 = document.getElementsByTagName("h2");
   h2[0].innerText = json.ip;
   h2[1].innerText = json.location.region + ", " + json.location.city;

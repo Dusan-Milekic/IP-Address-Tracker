@@ -7,6 +7,7 @@
   font-weight: 500;
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 header {
@@ -54,6 +55,9 @@ input {
   outline: 0px;
   font-weight: 400;
 }
+input::placeholder {
+  font-size: 0.9rem;
+}
 input:focus {
   background-color: white;
 }
@@ -67,11 +71,14 @@ button {
   background-color: black;
   color: white;
   cursor: pointer;
+  transition: 0.2s ease all;
 }
-
+button:hover {
+  background-color: #3f3f3f;
+}
 .holderInfo {
   margin-top: 24px;
-  width: 279px;
+  width: 327px;
   text-align: center;
   background-color: white;
   color: black;
@@ -122,6 +129,20 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
+  header {
+    min-height: 280px;
+    min-width: 100%;
+  }
+  header h1 {
+    font-size: 32px;
+  }
+  .search-holder {
+    min-width: 555px;
+  }
+  input::placeholder {
+    font-size: 18px;
+  }
+
   .holderInfo {
     min-width: 555px;
     display: grid;
@@ -129,6 +150,8 @@ main {
     padding: 32px;
     text-align: left;
 
+    left: 50%;
+    transform: translate(-50%, 0%);
     gap: 32px;
   }
   .info {
@@ -139,14 +162,27 @@ main {
     font-size: 12px;
   }
   #two,
+  #three,
   #forth {
     display: flex;
   }
   .line {
+    display: block;
     height: 100%;
     position: relative;
     background-color: #707070;
     opacity: 0.2;
     right: 32px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .holderInfo {
+    min-width: 1111px;
+    grid-template-columns: repeat(4, 213px);
+    gap: 60px;
+  }
+  .info h2 {
+    font-size: 26px;
   }
 }
