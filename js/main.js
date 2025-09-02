@@ -45,17 +45,3 @@ const input = document.getElementById("ipSearch");
 button.addEventListener("click", async () => {
   await ShowData(input.value);
 });
-
-/*
-location.city
-City
-location.lat
-Latitude
-location.lng
-Longitude
-location.postalCode
-Postal Code
-location.timezone
-Timezone in the format "+10:00"
-
-*/
